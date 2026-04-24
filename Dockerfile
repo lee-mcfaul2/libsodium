@@ -123,6 +123,7 @@ RUN set -eux \
       libldap2=2.6.10+dfsg-0ubuntu0.24.04.1 \
       liblsan0=14.2.0-4ubuntu2~24.04.1 \
       liblz4-1=1.9.4-1build1.1 \
+      liblzma-dev=5.6.1+really5.4.5-1ubuntu0.2 \
       liblzma5=5.6.1+really5.4.5-1ubuntu0.2 \
       libmagic-mgc=1:5.45-3build1 \
       libmagic1t64=1:5.45-3build1 \
@@ -304,6 +305,7 @@ RUN set -eux \
       'ee5633e863e19c3381ed97842ce35ed32ede96a3d1ae4e94c051d3036fe21347  libstdc++-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb' \
       'f0ed0e314a63ae1b7e5403d7e43a26c6e0c0ee69e9a305babcf9c6775607377a  libmagic-mgc_1%3a5.45-3build1_amd64.deb' \
       'f2bfd3f8f00413d5f1f04fc723063803c56ac0f1e0efae3bc41f2d7276972ec3  libacl1_2.3.2-1build1.1_amd64.deb' \
+      'f32c9c79c0d9eb88a3267fea803b4ae9f295c9e2a5cc69f030a298d8a238fa79  liblzma-dev_5.6.1+really5.4.5-1ubuntu0.2_amd64.deb' \
       'f3857b0863ac5cfd4263e9bf6cfb1d4be88d5321e4070d5bc2b62b0949e6c86f  libbsd0_0.12.1-1build1.1_amd64.deb' \
       'f82c9ad142f952ea523bda5bfca7bb0802af3a50b8c0f0dd9ec18cdfa104bde7  libtasn1-6_4.19.0-3ubuntu0.24.04.2_amd64.deb' \
       'f9b8ff6528114ba4c6a9ec94570c838a266f9f196969ae08f310725fa830d958  diffutils_1%3a3.10-1build1_amd64.deb' \
