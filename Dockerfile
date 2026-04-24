@@ -151,7 +151,6 @@ RUN set -eux \
       libsframe1=2.42-4ubuntu2.10 \
       libsmartcols1=2.39.3-9ubuntu6.5 \
       libssh-4=0.10.6-2ubuntu0.4 \
-      libssl-dev=3.0.13-0ubuntu3.9 \
       libssl3t64=3.0.13-0ubuntu3.9 \
       libstdc++-13-dev=13.3.0-6ubuntu2~24.04.1 \
       libstdc++6=14.2.0-4ubuntu2~24.04.1 \
@@ -181,8 +180,10 @@ RUN set -eux \
       tar=1.35+dfsg-3build1 \
       util-linux=2.39.3-9ubuntu6.5 \
       zlib1g=1:1.3.dfsg-3.1ubuntu2.1 \
+      zlib1g-dev=1:1.3.dfsg-3.1ubuntu2.1 \
  && printf '%s\n' \
       '015b65ef176021c1846ec8b6152167d5d266c1949ec30ee3367e95fa2b2ead27  tar_1.35+dfsg-3build1_amd64.deb' \
+      '023cbe9dbf0af87f10e54e342c67571874e412b9950d89c6cd7b010be2e67c3c  zlib1g-dev_1%3a1.3.dfsg-3.1ubuntu2.1_amd64.deb' \
       '02f2ca4183ea0578c6bbc0849669f0ea8749d254ed48738055a8695fb10ec93a  libxml2-dev_2.9.14+dfsg-1.3ubuntu3.7_amd64.deb' \
       '064dce00ce94e1fc2d33779cb0071088f4c8aac79e85345f2e78a020f7d14699  libbinutils_2.42-4ubuntu2.10_amd64.deb' \
       '0679f198b0128179e46cdf956fb2022c23c758664c00bc8efa0382d509683a8a  libkeyutils1_1.6.3-3build1_amd64.deb' \
@@ -278,7 +279,6 @@ RUN set -eux \
       'b95c172411a7fdae70307cf33a9f5320ba5e056b556454543dd5b679d5ce1c4f  gcc-14-base_14.2.0-4ubuntu2~24.04.1_amd64.deb' \
       'bb390da466a7461bfc87aa3e6b7cd145dae84af3e26bf437f2c0c218ba226294  debconf_1.5.86ubuntu1_all.deb' \
       'bbf5a155039042634961a61276650631ee47b9e721f91f8dbb731b0bbe046df3  libc6-dev_2.39-0ubuntu8.7_amd64.deb' \
-      'bc43282f9c419cf3d132aa076344d2612081ecd17e7ab5db99537d53f8e10690  libssl-dev_3.0.13-0ubuntu3.9_amd64.deb' \
       'c0ab7426300c645ac84d195134143866bd0d6bd33831df3d63d5ab29994984ca  libsmartcols1_2.39.3-9ubuntu6.5_amd64.deb' \
       'c17e0be76f77a8c15b3217cf9cb58ca63f6cc1974044d2fa4abb33ed7ed7ce1e  perl-modules-5.38_5.38.2-3.2ubuntu0.2_all.deb' \
       'c7535331fbb183c802c3bf4b6b210872dcc12d0421b3212b3c4b940f2c59ed3a  cpp-13_13.3.0-6ubuntu2~24.04.1_amd64.deb' \
