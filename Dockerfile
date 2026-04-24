@@ -67,6 +67,8 @@ RUN set -eux \
       gcc-x86-64-linux-gnu=4:13.2.0-7ubuntu1 \
       gettext=0.21-14ubuntu2 \
       gettext-base=0.21-14ubuntu2 \
+      git=1:2.43.0-1ubuntu7.3 \
+      git-man=1:2.43.0-1ubuntu7.3 \
       grep=3.11-4build1 \
       gzip=1.12-1ubuntu3.1 \
       hostname=3.23+nmu2ubuntu2 \
@@ -93,9 +95,12 @@ RUN set -eux \
       libcrypt1=1:4.4.36-4build1 \
       libctf-nobfd0=2.42-4ubuntu2.10 \
       libctf0=2.42-4ubuntu2.10 \
+      libcurl3t64-gnutls=8.5.0-2ubuntu10.8 \
       libcurl4-openssl-dev=8.5.0-2ubuntu10.8 \
       libcurl4t64=8.5.0-2ubuntu10.8 \
       libdb5.3t64=5.3.28+dfsg2-7 \
+      liberror-perl=0.17029-2 \
+      libexpat1=2.6.1-2ubuntu0.4 \
       libffi8=3.4.6-1build1 \
       libgcc-13-dev=13.3.0-6ubuntu2~24.04.1 \
       libgcc-s1=14.2.0-4ubuntu2~24.04.1 \
@@ -123,7 +128,6 @@ RUN set -eux \
       libldap2=2.6.10+dfsg-0ubuntu0.24.04.1 \
       liblsan0=14.2.0-4ubuntu2~24.04.1 \
       liblz4-1=1.9.4-1build1.1 \
-      liblzma-dev=5.6.1+really5.4.5-1ubuntu0.2 \
       liblzma5=5.6.1+really5.4.5-1ubuntu0.2 \
       libmagic-mgc=1:5.45-3build1 \
       libmagic1t64=1:5.45-3build1 \
@@ -147,6 +151,7 @@ RUN set -eux \
       libsframe1=2.42-4ubuntu2.10 \
       libsmartcols1=2.39.3-9ubuntu6.5 \
       libssh-4=0.10.6-2ubuntu0.4 \
+      libssl-dev=3.0.13-0ubuntu3.9 \
       libssl3t64=3.0.13-0ubuntu3.9 \
       libstdc++-13-dev=13.3.0-6ubuntu2~24.04.1 \
       libstdc++6=14.2.0-4ubuntu2~24.04.1 \
@@ -181,14 +186,17 @@ RUN set -eux \
       '02f2ca4183ea0578c6bbc0849669f0ea8749d254ed48738055a8695fb10ec93a  libxml2-dev_2.9.14+dfsg-1.3ubuntu3.7_amd64.deb' \
       '064dce00ce94e1fc2d33779cb0071088f4c8aac79e85345f2e78a020f7d14699  libbinutils_2.42-4ubuntu2.10_amd64.deb' \
       '0679f198b0128179e46cdf956fb2022c23c758664c00bc8efa0382d509683a8a  libkeyutils1_1.6.3-3build1_amd64.deb' \
+      '099bb129f543adc4c14203334b0fa0a909f8bf038c4d56bc9cc7c774ebf78f87  git_1%3a2.43.0-1ubuntu7.3_amd64.deb' \
       '0cf79113f5d193ce9af2be2ff4b2c3b30dd4e55a0b6c47f7d28f6c849ff3aa60  libjansson4_2.14-2build2_amd64.deb' \
       '0e0bb8b25153ed1c44ab92bc219eed469fcb5820c5c0bc6454b2fd366a33d3ee  gcc_4%3a13.2.0-7ubuntu1_amd64.deb' \
       '0f1b296f6731dc51569350dcb2971629f36e78a21015c73165eddc5af5c978ad  libgssapi-krb5-2_1.20.1-6ubuntu2.6_amd64.deb' \
       '1047a9a57018e18531f76e5b00e226a68554b6f1d147f2a5c1b32518c7b20636  debianutils_5.17build1_amd64.deb' \
       '110a797a57673d3ee497a141cf988199258058c57525799c63194d81822529a0  libpcre2-8-0_10.42-4ubuntu2.1_amd64.deb' \
+      '126a5612e652bdc2edee19ae8fe4308db72b5b3b0a5581bf885b44a093baf3e5  libexpat1_2.6.1-2ubuntu0.4_amd64.deb' \
       '151a0e70407faef701df3a283bca0b2f2e7aeb2b73e5682101bb5543e8213d98  libp11-kit0_0.25.3-4ubuntu2.1_amd64.deb' \
       '17dae1d6e803d0304e318f451c8abf62cbd5bb2a0068300cdeea77c62075b895  file_1%3a5.45-3build1_amd64.deb' \
       '18d6d74a5c038b458d95ba0c0909e0f086cd50bb9a0fee32697902724fc5645e  libgdbm6t64_1.23-5.1build1_amd64.deb' \
+      '1907af6bf33dd8684447c09f216c675d2b8559fadd8ddace29fbf83c6fb2a636  liberror-perl_0.17029-2_all.deb' \
       '1b7e3c2fc162e8358ca6e5a3fffdb4d0d632f790630323215841bb36a63c0ab8  libgprofng0_2.42-4ubuntu2.10_amd64.deb' \
       '1e510a15f30208d39edcd840e48f26a77bbca7c417805eeccb1e3f7de198ef29  binutils-x86-64-linux-gnu_2.42-4ubuntu2.10_amd64.deb' \
       '1eec134149f2a82b7781739edb685e672a947507652eade09b7ce87496725274  libudev1_255.4-1ubuntu8.15_amd64.deb' \
@@ -217,6 +225,7 @@ RUN set -eux \
       '526790098bf711ca4fa21cfdf334acdb9cd8e59d3b5732174ceca8ebc8eba98b  perl-base_5.38.2-3.2ubuntu0.2_amd64.deb' \
       '5338a17b0c7da20280097d5730ab640c8fcc2b4547acdda29361b27675b937c6  gettext_0.21-14ubuntu2_amd64.deb' \
       '53e1e1753729d04cf65b05e6e58abe06e2bb76cc07eff0e1b2a638a638ca209b  libtinfo6_6.4+20240113-1ubuntu2_amd64.deb' \
+      '5701f931ed2cd30644700b0fc1cda7c2214f93a63ef84c0c80e43ce40d2cf1d2  git-man_1%3a2.43.0-1ubuntu7.3_all.deb' \
       '59e1112a23cb6b1db98dd5a37a67aa11b0f75b2c21c9054bb6af5e2e0fd484fc  libgnutls30t64_3.8.3-1.1ubuntu3.5_amd64.deb' \
       '5ae9a98e73545002cd891f028859941af2a3c760cb6190e635c7ef36953912de  automake_1%3a1.16.5-1.3ubuntu1_all.deb' \
       '5c3eb1fc954af26da4190204098af489eb558552a89cf5cf099e0ea6aab157c5  libk5crypto3_1.20.1-6ubuntu2.6_amd64.deb' \
@@ -269,6 +278,7 @@ RUN set -eux \
       'b95c172411a7fdae70307cf33a9f5320ba5e056b556454543dd5b679d5ce1c4f  gcc-14-base_14.2.0-4ubuntu2~24.04.1_amd64.deb' \
       'bb390da466a7461bfc87aa3e6b7cd145dae84af3e26bf437f2c0c218ba226294  debconf_1.5.86ubuntu1_all.deb' \
       'bbf5a155039042634961a61276650631ee47b9e721f91f8dbb731b0bbe046df3  libc6-dev_2.39-0ubuntu8.7_amd64.deb' \
+      'bc43282f9c419cf3d132aa076344d2612081ecd17e7ab5db99537d53f8e10690  libssl-dev_3.0.13-0ubuntu3.9_amd64.deb' \
       'c0ab7426300c645ac84d195134143866bd0d6bd33831df3d63d5ab29994984ca  libsmartcols1_2.39.3-9ubuntu6.5_amd64.deb' \
       'c17e0be76f77a8c15b3217cf9cb58ca63f6cc1974044d2fa4abb33ed7ed7ce1e  perl-modules-5.38_5.38.2-3.2ubuntu0.2_all.deb' \
       'c7535331fbb183c802c3bf4b6b210872dcc12d0421b3212b3c4b940f2c59ed3a  cpp-13_13.3.0-6ubuntu2~24.04.1_amd64.deb' \
@@ -305,9 +315,9 @@ RUN set -eux \
       'ee5633e863e19c3381ed97842ce35ed32ede96a3d1ae4e94c051d3036fe21347  libstdc++-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb' \
       'f0ed0e314a63ae1b7e5403d7e43a26c6e0c0ee69e9a305babcf9c6775607377a  libmagic-mgc_1%3a5.45-3build1_amd64.deb' \
       'f2bfd3f8f00413d5f1f04fc723063803c56ac0f1e0efae3bc41f2d7276972ec3  libacl1_2.3.2-1build1.1_amd64.deb' \
-      'f32c9c79c0d9eb88a3267fea803b4ae9f295c9e2a5cc69f030a298d8a238fa79  liblzma-dev_5.6.1+really5.4.5-1ubuntu0.2_amd64.deb' \
       'f3857b0863ac5cfd4263e9bf6cfb1d4be88d5321e4070d5bc2b62b0949e6c86f  libbsd0_0.12.1-1build1.1_amd64.deb' \
       'f82c9ad142f952ea523bda5bfca7bb0802af3a50b8c0f0dd9ec18cdfa104bde7  libtasn1-6_4.19.0-3ubuntu0.24.04.2_amd64.deb' \
+      'f91f24336cb9cc9ea97475bc57c1ba7502ca4bf2efb235762abfaeacb44702a3  libcurl3t64-gnutls_8.5.0-2ubuntu10.8_amd64.deb' \
       'f9b8ff6528114ba4c6a9ec94570c838a266f9f196969ae08f310725fa830d958  diffutils_1%3a3.10-1build1_amd64.deb' \
       'fb8564afd7b7d74d55207070ba50339478e22d29a39ec740dc482f069ac7ee65  libgdbm-compat4t64_1.23-5.1build1_amd64.deb' \
       'fc0fdc5983ea3d3579ccf335e51dec69684a0dd9bb915734999c5733add9507a  grep_3.11-4build1_amd64.deb' \
