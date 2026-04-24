@@ -743,6 +743,11 @@ jobs:
           VERSION: ${{ steps.meta.outputs.version }}
           SDE: ${{ steps.meta.outputs.sde }}
           DISTDIR: ${{ steps.dist.outputs.distdir }}
+          # workflow_ref embeds the tag name, which a compromised
+          # maintainer could shape to inject shell. Pipe through
+          # env so the shell sees a bare variable, not a template
+          # expansion (zizmor template-injection audit).
+          WORKFLOW_REF: ${{ github.workflow_ref }}
         run: |
           set -eu
           # Enumerate main artifacts = anything in release/ that isn't
@@ -771,7 +776,7 @@ jobs:
             echo "- **Tag:**                 \`${GITHUB_REF_NAME}\`"
             echo "- **SOURCE_DATE_EPOCH:**   \`${SDE}\`"
             echo "- **Builder image:**       \`ghcr.io/${{ github.repository }}/builder@sha256:5e60c883547d016e256b15608d3d164a2a10ef3cc218f551e815f5b0b1455b27\`"
-            echo "- **Workflow:**            \`${{ github.workflow_ref }}\`"
+            echo "- **Workflow:**            \`${WORKFLOW_REF}\`"
             echo
             echo "### Checksums"
             echo
