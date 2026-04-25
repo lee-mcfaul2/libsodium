@@ -29,6 +29,14 @@
 
 set -euo pipefail
 
+# Default SOURCE_DATE_EPOCH for contexts where it isn't pre-set
+# (scan.yml traces this hook for dependency mapping and does not
+# care about reproducible mtimes; release.yml's build_windows sets
+# a real value before invoking). The default is harmless to scan
+# and overridden in release.
+: "${SOURCE_DATE_EPOCH:=0}"
+export SOURCE_DATE_EPOCH
+
 # Read PACKAGE + VERSION from configure.ac. The Makefile-based
 # extraction used elsewhere in the pipeline does not work here: the
 # hook runs from inside a fresh distdir where ./configure has not
