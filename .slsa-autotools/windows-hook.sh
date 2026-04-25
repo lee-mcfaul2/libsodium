@@ -29,8 +29,20 @@
 
 set -euo pipefail
 
-PACKAGE=$(awk -F' *= *' '$1 == "PACKAGE" {print $2; exit}' Makefile)
-VERSION=$(awk -F' *= *' '$1 == "VERSION" {print $2; exit}' Makefile)
+# Read PACKAGE + VERSION from configure.ac. The Makefile-based
+# extraction used elsewhere in the pipeline does not work here: the
+# hook runs from inside a fresh distdir where ./configure has not
+# been run yet (build_arch below invokes ./configure once per arch).
+# libsodium's AC_INIT is single-line:
+#   AC_INIT([libsodium],[1.0.23],[bug@...],[libsodium],[https://...])
+# Field 2 of a [ / ] split is PACKAGE, field 4 is VERSION.
+read -r PACKAGE VERSION < <(
+  awk 'BEGIN{FS="[][]"} /^AC_INIT/ {print $2, $4; exit}' configure.ac
+)
+[ -n "${PACKAGE}" ] && [ -n "${VERSION}" ] || {
+  echo "ERROR: could not extract PACKAGE/VERSION from configure.ac" >&2
+  exit 1
+}
 
 build_arch() {
   local host="$1" prefix="$2" cflags="$3"
