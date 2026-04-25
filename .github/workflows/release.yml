@@ -69,7 +69,7 @@ jobs:
     name: Test before release
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/${{ github.repository }}/builder@sha256:5e60c883547d016e256b15608d3d164a2a10ef3cc218f551e815f5b0b1455b27
+      image: ghcr.io/${{ github.repository }}/builder@sha256:37973b4a4cb2e90aa784b9b9a4b1a3ef2080c7789a683f1d4fbaf513cb10608b
     defaults:
       run:
         shell: bash
@@ -144,7 +144,7 @@ jobs:
     needs: test
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/${{ github.repository }}/builder@sha256:5e60c883547d016e256b15608d3d164a2a10ef3cc218f551e815f5b0b1455b27
+      image: ghcr.io/${{ github.repository }}/builder@sha256:37973b4a4cb2e90aa784b9b9a4b1a3ef2080c7789a683f1d4fbaf513cb10608b
     defaults:
       run:
         shell: bash
@@ -415,7 +415,7 @@ jobs:
     if: needs.test.outputs.has_windows == 'true'
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/${{ github.repository }}/builder@sha256:5e60c883547d016e256b15608d3d164a2a10ef3cc218f551e815f5b0b1455b27
+      image: ghcr.io/${{ github.repository }}/builder@sha256:37973b4a4cb2e90aa784b9b9a4b1a3ef2080c7789a683f1d4fbaf513cb10608b
     defaults:
       run:
         shell: bash
@@ -798,7 +798,7 @@ jobs:
             echo "- **Commit:**              \`${GITHUB_SHA}\`"
             echo "- **Tag:**                 \`${GITHUB_REF_NAME}\`"
             echo "- **SOURCE_DATE_EPOCH:**   \`${SDE}\`"
-            echo "- **Builder image:**       \`ghcr.io/${{ github.repository }}/builder@sha256:5e60c883547d016e256b15608d3d164a2a10ef3cc218f551e815f5b0b1455b27\`"
+            echo "- **Builder image:**       \`ghcr.io/${{ github.repository }}/builder@sha256:37973b4a4cb2e90aa784b9b9a4b1a3ef2080c7789a683f1d4fbaf513cb10608b\`"
             echo "- **Workflow:**            \`${WORKFLOW_REF}\`"
             echo
             echo "### Checksums"
